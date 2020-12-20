@@ -1,0 +1,22 @@
+﻿{
+  "background_color": "white",
+  "description": "msc intranet",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "Content/images/logo.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "Content/images/logo.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "intranet",
+  "short_name": "intranet",
+  "start_url": "/",
+  "theme_color": "white",
+  "theme-color": "white"
+}

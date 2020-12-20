@@ -1,0 +1,27 @@
+﻿@using Intranet.Models
+@model Post
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string image = Model.Files.Count > 0 ? "/content/images/" + Model.Files.FirstOrDefault().Name + "." + Model.Files.FirstOrDefault().FileType : "";
+}
+
+<div class="row">
+    <div class="col mb-4">
+
+        <div class="card">
+            @if (Model.Files.Count > 0)
+            {
+                <img src="@image" class="card-img-top" alt="@Model.Title" />
+            }
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text text-wrap">
+                    @Model.Description
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

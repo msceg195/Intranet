@@ -1,0 +1,57 @@
+﻿@using Intranet.Models
+@model List<Post>
+
+@{
+    string image = "";
+    int counter = 0;
+}
+<div class="row">
+    @foreach (Post post in Model)
+    {
+        counter = post.Files.Count;
+
+        image = post.Files.Count > 0 ?
+            "/content/images/" +
+            post.Files.FirstOrDefault().Name + "." +
+            post.Files.FirstOrDefault().FileType : "";
+
+        if (counter == 1)
+        {
+            <div class="col-12 mb-4">
+                <a href="/posts/details/@post.Id">
+                    <div class="card">
+                        @if (post.Files.Count > 0)
+                        {
+                            <img src="@image" class="card-img-top" alt="@post.Title">
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">@post.Title</h5>
+                            <p class="card-text text-wrap">
+                                @post.Description
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="col-sm-4 col-md-4 col-xl-4 mb-4">
+                <a href="/post/details/@post.Id">
+                    <div class="card">
+                        @if (post.Files.Count > 0)
+                        {
+                            <img src="@image" class="card-img-top" alt="@post.Title">
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">@post.Title</h5>
+                            <p class="card-text text-wrap">
+                                @post.Description
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    }
+</div>

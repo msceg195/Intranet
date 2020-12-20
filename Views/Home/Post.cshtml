@@ -1,0 +1,42 @@
+﻿@using Intranet.Models
+@model Post
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <div class="card">
+            @if (Model.Image.Count > 0)
+            {
+                <div style=" min-height: 400px; background-repeat: no-repeat; background-position: center; background-image: url( @Url.Content(string.Concat("~/content/images/" ,                                                                 Model.Image.FirstOrDefault().Name , "." ,                                                                                Model.Image.FirstOrDefault().ImageType)) );">
+
+                </div>
+            }
+            <div class="card-body">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text text-wrap">
+                    @Model.Description
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript">
+    window.onload = maxWindow;
+
+    function maxWindow() {
+        window.moveTo(0, 0);
+
+        if (document.all) {
+            top.window.resizeTo(screen.availWidth, screen.availHeight);
+        }
+
+        else if (document.layers || document.getElementById) {
+            if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+                top.window.outerHeight = screen.availHeight;
+                top.window.outerWidth = screen.availWidth;
+            }
+        }
+    }
+</script> 
