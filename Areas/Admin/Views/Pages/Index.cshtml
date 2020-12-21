@@ -11,17 +11,18 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
+    <caption></caption>
     <tr>
-        <th>
+        <th id="name">
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
+        <th id="title">
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th>
+        <th id="description">
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th></th>
+        <th id="id"></th>
     </tr>
 
 @foreach (var item in Model) {

@@ -11,66 +11,68 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
+    <caption></caption>
     <tr>
-        <th>
+        <th id="name">
             @Html.DisplayNameFor(model => model.Page.Name)
         </th>
-        <th>
+        <th id="name1">
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
+        <th id="title">
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th>
+        <th id="body">
             @Html.DisplayNameFor(model => model.Body)
         </th>
-        <th>
+        <th id="description">
             @Html.DisplayNameFor(model => model.Description)
         </th>
-        <th>
+        <th id="createdate">
             @Html.DisplayNameFor(model => model.CreateDate)
         </th>
-        <th>
+        <th id="publishfrom">
             @Html.DisplayNameFor(model => model.PublishFrom)
         </th>
-        <th>
+        <th id="publishto">
             @Html.DisplayNameFor(model => model.PublishTo)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Page.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Body)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreateDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishFrom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishTo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Page.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishTo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
